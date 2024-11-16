@@ -29,20 +29,12 @@
                 }
                 Console.WriteLine();
 
-                Console.WriteLine("Odd elements from array: ");
+                Console.WriteLine("Enter the number to find the elements that are less than it: ");
+                var lessThanNum = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Elements that are less than the given number: ");
                 foreach (var element in array)
                 {
-                    if (element % 2 != 0)
-                    {
-                        Console.Write(element + " ");
-                    }
-                }
-                Console.WriteLine();
-
-                Console.WriteLine("Even elements from array: ");
-                foreach (var element in array)
-                {
-                    if (element % 2 == 0)
+                    if (element < lessThanNum)
                     {
                         Console.Write(element + " ");
                     }
