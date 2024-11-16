@@ -6,7 +6,7 @@
         {
             try
             {
-                var random = new Random(DateTime.Now.Millisecond);
+                var random = new Random();
                 Console.WriteLine("Enter the lower bound for the random number: ");
                 var lowerMaxRandomBound = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter the upper bound for the random number: ");
@@ -28,18 +28,11 @@
                     Console.Write(element + " ");
                 }
                 Console.WriteLine();
-
-                Console.WriteLine("Enter the number to find the elements that are less than it: ");
-                var lessThanNum = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Elements that are less than the given number: ");
-                foreach (var element in array)
-                {
-                    if (element < lessThanNum)
-                    {
-                        Console.Write(element + " ");
-                    }
-                }
-                Console.WriteLine();
+                string arrayString = string.Join(" ", array);
+                Console.WriteLine("Еnter three numbers to count them in array: ");
+                string items = Console.ReadLine();
+                int countContains = arrayString.Split(items).Length - 1;
+                Console.WriteLine($"This three numbers in array repeats {countContains} times");
             }
             catch (Exception ex)
             {
